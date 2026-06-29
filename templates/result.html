@@ -1,0 +1,22 @@
+<h1>Resume Analysis</h1>
+
+<p><strong>Resume:</strong> {{ filename }}</p>
+
+<h2>ATS Score</h2>
+<p>{{ score }}/100</p>
+
+<h2>Skills Found</h2>
+
+<ul>
+{% for skill in skills %}
+<li>{{ skill }}</li>
+{% endfor %}
+</ul>
+
+<h2>Suggestions</h2>
+
+<ul>
+{% for item in suggestions %}
+<li>{{ item }}</li>
+{% endfor %}
+</ul>

@@ -1,0 +1,12 @@
+from app import db
+from flask_login import UserMixin
+
+class User(UserMixin, db.Model):
+    __tablename__ = "users"
+
+    id = db.Column(db.Integer, primary_key=True)
+    fullname = db.Column(db.String(100), nullable=False)
+    email = db.Column(db.String(120), unique=True, nullable=False)
+    password = db.Column(db.String(255), nullable=False)
+
+    resumes = db.relationship("Resume", backref="user", lazy=True)
